@@ -3,7 +3,7 @@
 A static, single-page site hosting our favorite-places guides for multiple locations
 (Raleigh, and more to come) — made to share with friends and family.
 
-- **Live (planned):** https://melsom.guide (Cloudflare Pages)
+- **Live:** https://melsom.guide (Cloudflare Pages)
 - Each location is a guide reachable at its own path, e.g. `/raleigh`. The location in the title is a
   dropdown for switching guides.
 
@@ -37,5 +37,6 @@ python3 -m http.server   # then visit http://localhost:8000
 
 ## Status
 
-Bootstrapped. The render module and the full Raleigh content migration are in progress — see the tech
-spec.
+v1 live at [melsom.guide](https://melsom.guide) — Raleigh guide with 67 places across 7 sections.
+Add a place by editing `guides/raleigh.json`. Add a new guide by creating `guides/<slug>.json` and
+adding one entry in `guides/index.json`.
