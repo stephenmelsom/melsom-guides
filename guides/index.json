@@ -1,0 +1,6 @@
+{
+  "defaultGuide": "raleigh",
+  "guides": [
+    { "slug": "raleigh", "name": "Raleigh", "title": "The Melsom Guide to Raleigh" }
+  ]
+}

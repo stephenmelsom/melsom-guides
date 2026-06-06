@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Theme pre-paint: read stored pref before first paint to avoid flash -->
+  <script>
+    (function () {
+      try {
+        var p = localStorage.getItem('melsom-guide-theme');
+        var t = (p === 'light' || p === 'dark') ? p
+              : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Default meta (Cloudflare Pages Function replaces these for guide/place routes) -->
+  <title>The Melsom Guides</title>
+  <meta name="description" content="Our favorite spots, shared with family and friends." />
+  <link rel="canonical" href="https://melsom.guide/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Melsom Guides" />
+  <meta property="og:title" content="The Melsom Guides" />
+  <meta property="og:description" content="Our favorite spots, shared with family and friends." />
+  <meta property="og:url" content="https://melsom.guide/" />
+  <meta property="og:image" content="https://melsom.guide/assets/og/default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Melsom Guides" />
+  <meta name="twitter:description" content="Our favorite spots, shared with family and friends." />
+  <meta name="twitter:image" content="https://melsom.guide/assets/og/default.png" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" crossorigin="" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="theme-toggle" role="group" aria-label="Color theme">
+      <button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>
+      <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+      <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+    </div>
+    <h1 id="site-title"><!-- populated by render module --></h1>
+    <div class="accent-rule"></div>
+    <p class="intro" id="site-intro"><!-- populated by render module --></p>
+  </header>
+
+  <nav class="site-nav" aria-label="Section navigation" id="site-nav">
+    <ul><!-- populated by render module --></ul>
+  </nav>
+
+  <section class="filters" aria-label="Find places">
+    <div class="filters-inner">
+      <div class="filter-row">
+        <div class="filter-search">
+          <label for="place-search">Search places</label>
+          <input id="place-search" type="search" autocomplete="off" placeholder="Search by name or description" />
+        </div>
+        <p class="filter-count" id="filter-count" aria-live="polite"></p>
+      </div>
+      <div class="filter-chips" id="filter-chips" role="group" aria-label="Filter by section or tag"></div>
+    </div>
+  </section>
+
+  <div class="map-section">
+    <div id="map"></div>
+  </div>
+
+  <main id="main-content">
+    <!-- populated by render module -->
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with love — come visit!</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin=""></script>
+
+  <!-- Render module -->
+  <script>
+  (function () {
+    'use strict';
+
+    // ── State ────────────────────────────────────────────────────────────────
+    let currentGuide = null;
+    let manifest = null;
+
+    // Map state (persisted across guide switches)
+    let map = null;
+    let cluster = null;
+    let markersByCardId = {};  // 'place-<slug>' -> Leaflet marker
+    let legendControl = null;
+
+    // Filter state
+    let searchQuery = '';
+    let activeSection = null;   // section.id string or null
+    const activeTags = new Set();
+
+    // ── Helpers ──────────────────────────────────────────────────────────────
+    function esc(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function parseRoute() {
+      const parts = location.pathname.replace(/^\/|\/$/g, '').split('/').filter(Boolean);
+      return { guideSlug: parts[0] || null, placeSlug: parts[1] || null };
+    }
+
+    // ── Accent ───────────────────────────────────────────────────────────────
+    function applyAccent(guide) {
+      // Set on :root inline style; [data-theme=dark] in CSS wins over this
+      // for dark mode (higher specificity selector beats inline? no — inline
+      // wins specificity, but dark theme uses a CSS variable redefinition in
+      // a selector block, not inline). Actually: CSS [data-theme=dark] vars
+      // are defined inside a rule block, so they *do* override :root. The
+      // inline style sets the property value on the element, but CSS custom
+      // properties cascade differently — a property set via JS setProperty on
+      // the element is treated as an author-level inline style and DOES win
+      // over [data-theme=dark] block rules. So we apply the guide accent
+      // unconditionally; the dark-mode CSS rule redefines --accent in
+      // [data-theme=dark] which wins because inline style on :root loses to
+      // any rule with specificity in the cascade for custom properties.
+      //
+      // Wait — for custom properties, inline style (element.style.setProperty)
+      // IS the highest priority. To let the dark theme CSS win, we set the
+      // property on the root only when not in dark mode.
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (!isDark) {
+        document.documentElement.style.setProperty('--accent', guide.accent || '#0F766E');
+      }
+      // Store so we can re-apply when theme switches to light
+      document.documentElement.dataset.guideAccent = guide.accent || '#0F766E';
+    }
+
+    // ── Header ───────────────────────────────────────────────────────────────
+    function renderHeader(guide, mfst) {
+      const h1 = document.getElementById('site-title');
+      const intro = document.getElementById('site-intro');
+
+      const items = mfst.guides.map(g =>
+        `<li role="option" data-guide="${esc(g.slug)}" tabindex="0"
+             class="${g.slug === guide.slug ? 'guide-menu-current' : ''}">${esc(g.name)}</li>`
+      ).join('');
+
+      h1.innerHTML =
+        `The Melsom Guide to <span class="guide-dropdown">` +
+        `<button class="guide-dropdown-btn" type="button" aria-haspopup="listbox" aria-expanded="false" id="guide-dropdown-btn">` +
+        `${esc(guide.name)} <span aria-hidden="true">&#9660;</span>` +
+        `</button>` +
+        `<ul class="guide-dropdown-menu" role="listbox" hidden id="guide-menu" aria-labelledby="guide-dropdown-btn">` +
+        items +
+        `</ul></span>`;
+
+      intro.textContent = guide.intro;
+
+      wireDropdown();
+    }
+
+    function wireDropdown() {
+      const btn = document.getElementById('guide-dropdown-btn');
+      const menu = document.getElementById('guide-menu');
+      if (!btn || !menu) return;
+
+      const openMenu = () => {
+        menu.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+        const first = menu.querySelector('li');
+        if (first) first.focus();
+      };
+
+      const closeMenu = () => {
+        menu.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+      };
+
+      btn.addEventListener('click', () => menu.hidden ? openMenu() : closeMenu());
+
+      menu.addEventListener('click', e => {
+        const li = e.target.closest('[data-guide]');
+        if (!li) return;
+        closeMenu();
+        const slug = li.dataset.guide;
+        if (slug !== currentGuide.slug) switchGuide(slug);
+      });
+
+      menu.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          const li = e.target.closest('[data-guide]');
+          if (li) {
+            e.preventDefault();
+            const slug = li.dataset.guide;
+            closeMenu();
+            if (slug !== currentGuide.slug) switchGuide(slug);
+          }
+        }
+        if (e.key === 'Escape') { closeMenu(); btn.focus(); }
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          const next = document.activeElement.nextElementSibling;
+          if (next) next.focus();
+        }
+        if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          const prev = document.activeElement.previousElementSibling;
+          if (prev) prev.focus();
+          else btn.focus();
+        }
+      });
+
+      if (!document._guideDropdownClickWired) {
+        document._guideDropdownClickWired = true;
+        document.addEventListener('click', e => {
+          const m = document.getElementById('guide-menu');
+          const b = document.getElementById('guide-dropdown-btn');
+          if (m && !m.hidden && !m.contains(e.target) && e.target !== b) {
+            m.hidden = true;
+            if (b) b.setAttribute('aria-expanded', 'false');
+          }
+        }, { capture: true });
+      }
+    }
+
+    // ── Nav ──────────────────────────────────────────────────────────────────
+    function renderNav(guide) {
+      const ul = document.querySelector('#site-nav ul');
+      if (!ul) return;
+      ul.innerHTML = guide.sections.map(s =>
+        `<li><a href="#${esc(s.id)}">${esc(s.title)}</a></li>`
+      ).join('');
+    }
+
+    // ── Cards & Main ─────────────────────────────────────────────────────────
+    function renderCard(place, sectionId, sectionColor) {
+      const tagPills = (place.tags || []).map(t => {
+        const tagDef = currentGuide.tags.find(td => td.id === t);
+        return tagDef ? `<span class="pill ${esc(t)}">${esc(tagDef.label)}</span>` : '';
+      }).join('');
+
+      const links = (place.links || []).map(l =>
+        `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`
+      ).join('');
+
+      const hasCoords = typeof place.lat === 'number' && typeof place.lng === 'number';
+
+      return `<article class="card${hasCoords ? ' card--mappable' : ''}"
+        id="place-${esc(place.slug)}"
+        data-section="${esc(sectionId)}"
+        data-tags="${esc((place.tags || []).join(','))}"
+        ${hasCoords ? `data-lat="${place.lat}" data-lng="${place.lng}"` : ''}
+        data-color="${esc(sectionColor)}">
+        <div class="card-title">
+          <h3>${esc(place.name)}</h3>
+          ${tagPills}
+        </div>
+        <p>${place.description}</p>
+        <div class="card-links">${links}</div>
+      </article>`;
+    }
+
+    function renderMain(guide) {
+      const main = document.getElementById('main-content');
+      if (!main) return;
+
+      let html = '';
+      for (const section of guide.sections) {
+        const isHighlight = section.style === 'highlight';
+        html += `<section class="section${isHighlight ? ' shortlist' : ''}" id="${esc(section.id)}" data-section="${esc(section.id)}">`;
+        html += `<div class="section-head"><h2>${esc(section.title)}</h2>`;
+        if (section.blurb) html += `<p>${esc(section.blurb)}</p>`;
+        html += `</div>`;
+
+        if (section.groups) {
+          for (const group of section.groups) {
+            html += `<div class="section-group">`;
+            html += `<div class="subsection-head"><h3>${esc(group.title)}</h3>`;
+            if (group.blurb) html += `<p>${esc(group.blurb)}</p>`;
+            html += `</div>`;
+            html += `<div class="grid">`;
+            for (const place of (group.places || [])) {
+              html += renderCard(place, section.id, section.color);
+            }
+            html += `</div></div>`;
+          }
+        } else if (section.places) {
+          html += `<div class="grid">`;
+          for (const place of section.places) {
+            html += renderCard(place, section.id, section.color);
+          }
+          html += `</div>`;
+        }
+
+        html += `</section>`;
+      }
+
+      html += `<p class="filter-empty" id="filter-empty" hidden>No places match those filters.</p>`;
+      main.innerHTML = html;
+    }
+
+    // ── Map ──────────────────────────────────────────────────────────────────
+    function initMap() {
+      if (map) return;  // already initialized
+
+      map = L.map('map');
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      cluster = L.markerClusterGroup({ maxClusterRadius: 45, showCoverageOnHover: false });
+      map.addLayer(cluster);
+
+      map.locate({ setView: false });
+      map.on('locationfound', e => {
+        L.circle(e.latlng, {
+          radius: e.accuracy / 2,
+          color: '#0f766e',
+          fillColor: '#0f766e',
+          fillOpacity: 0.12,
+          weight: 1
+        }).addTo(map);
+        L.marker(e.latlng).addTo(map).bindTooltip('You are here', { direction: 'top', offset: [0, -40] });
+      });
+    }
+
+    function nameOf(card) {
+      const h3 = card.querySelector('h3');
+      return h3 ? h3.textContent.trim() : '';
+    }
+
+    function flashCard(card) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      card.classList.remove('card--flash');
+      void card.offsetWidth;
+      card.classList.add('card--flash');
+    }
+
+    function showOnMap(marker) {
+      document.getElementById('map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      cluster.zoomToShowLayer(marker, () => marker.openTooltip());
+    }
+
+    function buildMap(guide) {
+      initMap();
+
+      // Clear previous markers
+      cluster.clearLayers();
+      markersByCardId = {};
+
+      // Remove previous legend
+      if (legendControl) {
+        legendControl.remove();
+        legendControl = null;
+      }
+
+      const bounds = L.latLngBounds([]);
+      const mappable = document.querySelectorAll('#main-content .card[data-lat]');
+
+      mappable.forEach(card => {
+        const lat = parseFloat(card.getAttribute('data-lat'));
+        const lng = parseFloat(card.getAttribute('data-lng'));
+        const color = card.dataset.color || '#555';
+        const slug = card.id;  // 'place-<slug>'
+
+        const marker = L.marker([lat, lng], {
+          icon: L.divIcon({
+            className: 'map-pin-wrap',
+            html: `<span class="map-pin" style="background:${color}"></span>`,
+            iconSize: [16, 16],
+            iconAnchor: [8, 8],
+            tooltipAnchor: [0, -8]
+          })
+        });
+
+        marker.bindTooltip(nameOf(card));
+
+        marker.on('click', () => {
+          history.pushState(
+            { guideSlug: currentGuide.slug, placeSlug: slug.replace(/^place-/, '') },
+            '',
+            '/' + currentGuide.slug + '/' + slug.replace(/^place-/, '')
+          );
+          flashCard(card);
+        });
+
+        cluster.addLayer(marker);
+        markersByCardId[slug] = marker;
+        bounds.extend([lat, lng]);
+
+        card.addEventListener('click', e => {
+          if (e.target.closest('a, button')) return;
+          history.pushState(
+            { guideSlug: currentGuide.slug, placeSlug: slug.replace(/^place-/, '') },
+            '',
+            '/' + currentGuide.slug + '/' + slug.replace(/^place-/, '')
+          );
+          showOnMap(marker);
+        });
+      });
+
+      // Fit bounds or fall back to a default view
+      if (bounds.isValid()) {
+        map.fitBounds(bounds, { padding: [30, 30] });
+      } else {
+        map.setView([39.5, -98.35], 4);
+      }
+
+      // Build legend from guide sections
+      legendControl = L.control({ position: 'bottomright' });
+      legendControl.onAdd = function () {
+        const div = L.DomUtil.create('div', 'map-legend');
+        div.innerHTML = guide.sections.map(s =>
+          `<div class="legend-item"><span class="legend-dot" style="background:${s.color}"></span>${esc(s.title)}</div>`
+        ).join('');
+        return div;
+      };
+      legendControl.addTo(map);
+    }
+
+    // ── Focus place ──────────────────────────────────────────────────────────
+    function focusPlace(slug) {
+      const card = document.getElementById('place-' + slug);
+      if (!card) return;
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      card.classList.remove('card--flash');
+      void card.offsetWidth;
+      card.classList.add('card--flash');
+      const marker = markersByCardId['place-' + slug];
+      if (marker && cluster) cluster.zoomToShowLayer(marker, () => marker.openTooltip());
+    }
+
+    // ── Filter chips ─────────────────────────────────────────────────────────
+    function renderFilterChips(guide) {
+      const container = document.getElementById('filter-chips');
+      if (!container) return;
+      let html = '';
+      for (const section of guide.sections) {
+        html += `<button class="chip chip--section" type="button" aria-pressed="false"
+          data-section-id="${esc(section.id)}"
+          style="--chip-color:${esc(section.color)}">${esc(section.title)}</button>`;
+      }
+      for (const tag of (guide.tags || [])) {
+        html += `<button class="chip chip--tag" type="button" aria-pressed="false"
+          data-tag-id="${esc(tag.id)}">${esc(tag.label)}</button>`;
+      }
+      container.innerHTML = html;
+      wireChips();
+    }
+
+    function wireChips() {
+      const container = document.getElementById('filter-chips');
+      if (!container) return;
+
+      container.querySelectorAll('.chip--section').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.sectionId;
+          if (activeSection === id) {
+            // Deactivate
+            activeSection = null;
+            btn.setAttribute('aria-pressed', 'false');
+          } else {
+            // Activate this, deactivate others
+            activeSection = id;
+            container.querySelectorAll('.chip--section').forEach(b => {
+              b.setAttribute('aria-pressed', b.dataset.sectionId === id ? 'true' : 'false');
+            });
+          }
+          applyFilter();
+        });
+      });
+
+      container.querySelectorAll('.chip--tag').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.tagId;
+          if (activeTags.has(id)) {
+            activeTags.delete(id);
+            btn.setAttribute('aria-pressed', 'false');
+          } else {
+            activeTags.add(id);
+            btn.setAttribute('aria-pressed', 'true');
+          }
+          applyFilter();
+        });
+      });
+    }
+
+    // ── Apply filter ─────────────────────────────────────────────────────────
+    function applyFilter() {
+      const allCards = document.querySelectorAll('#main-content .card');
+      const visibleMarkers = [];
+      let visibleCardCount = 0;
+
+      allCards.forEach(card => {
+        const matchesSearch = !searchQuery || card.textContent.toLowerCase().includes(searchQuery);
+        const matchesSection = !activeSection || card.dataset.section === activeSection;
+        const cardTags = card.dataset.tags ? card.dataset.tags.split(',').filter(Boolean) : [];
+        const matchesTags = activeTags.size === 0 || [...activeTags].every(t => cardTags.includes(t));
+
+        const visible = matchesSearch && matchesSection && matchesTags;
+        card.hidden = !visible;
+        if (visible) {
+          visibleCardCount++;
+          const marker = markersByCardId[card.id];
+          if (marker) visibleMarkers.push(marker);
+        }
+      });
+
+      // Hide/show section-groups and sections
+      document.querySelectorAll('#main-content .section').forEach(section => {
+        section.querySelectorAll('.section-group').forEach(group => {
+          const hasVisible = Array.from(group.querySelectorAll('.card')).some(c => !c.hidden);
+          group.hidden = !hasVisible;
+        });
+        const hasVisible = Array.from(section.querySelectorAll('.card')).some(c => !c.hidden);
+        section.hidden = !hasVisible;
+      });
+
+      // Rebuild cluster with visible markers
+      if (cluster) {
+        cluster.clearLayers();
+        visibleMarkers.forEach(m => cluster.addLayer(m));
+      }
+
+      // Update count
+      const countEl = document.getElementById('filter-count');
+      if (countEl) {
+        const n = visibleMarkers.length;
+        countEl.textContent = n + ' ' + (n === 1 ? 'place' : 'places');
+      }
+
+      // Show/hide empty state
+      const emptyEl = document.getElementById('filter-empty');
+      if (emptyEl) emptyEl.hidden = visibleCardCount > 0;
+    }
+
+    function wireSearch() {
+      const input = document.getElementById('place-search');
+      if (!input || input.dataset.wired) return;
+      input.dataset.wired = '1';
+      input.addEventListener('input', () => {
+        searchQuery = input.value.trim().toLowerCase();
+        applyFilter();
+      });
+    }
+
+    // ── Guide loading ────────────────────────────────────────────────────────
+    function resetFilterState() {
+      searchQuery = '';
+      activeSection = null;
+      activeTags.clear();
+      const input = document.getElementById('place-search');
+      if (input) input.value = '';
+    }
+
+    async function loadAndRenderGuide(slug, placeSlug, updateHistory = false) {
+      const res = await fetch('guides/' + slug + '.json');
+      const guide = await res.json();
+      currentGuide = guide;
+
+      resetFilterState();
+      applyAccent(guide);
+      renderHeader(guide, manifest);
+      renderNav(guide);
+      renderMain(guide);
+      buildMap(guide);
+      renderFilterChips(guide);
+      wireSearch();
+      applyFilter();
+      window.scrollTo(0, 0);
+
+      if (updateHistory) {
+        history.pushState({ guideSlug: slug, placeSlug: null }, '', '/' + slug);
+      }
+      if (placeSlug) focusPlace(placeSlug);
+    }
+
+    function switchGuide(slug) {
+      loadAndRenderGuide(slug, null, true);
+    }
+
+    // ── Popstate ─────────────────────────────────────────────────────────────
+    window.addEventListener('popstate', e => {
+      const state = e.state || parseRoute();
+      const { guideSlug, placeSlug } = state;
+      if (guideSlug && guideSlug !== currentGuide?.slug) {
+        const isValid = manifest?.guides.some(g => g.slug === guideSlug);
+        loadAndRenderGuide(isValid ? guideSlug : manifest.defaultGuide, placeSlug, false);
+      } else if (placeSlug) {
+        focusPlace(placeSlug);
+      }
+    });
+
+    // ── Boot ─────────────────────────────────────────────────────────────────
+    (async () => {
+      const route = parseRoute();
+      const requestedSlug = route.guideSlug;
+
+      const manifestP = fetch('guides/index.json').then(r => r.json());
+      const guideP = requestedSlug
+        ? fetch('guides/' + requestedSlug + '.json').then(r => r.json()).catch(() => null)
+        : Promise.resolve(null);
+
+      const [m, g] = await Promise.all([manifestP, guideP]);
+      manifest = m;
+
+      const isValid = requestedSlug && m.guides.some(x => x.slug === requestedSlug) && g;
+      const targetSlug = isValid ? requestedSlug : m.defaultGuide;
+      const guide = isValid ? g : await fetch('guides/' + targetSlug + '.json').then(r => r.json());
+
+      currentGuide = guide;
+      applyAccent(guide);
+      renderHeader(guide, manifest);
+      renderNav(guide);
+      renderMain(guide);
+      buildMap(guide);
+      renderFilterChips(guide);
+      wireSearch();
+      applyFilter();
+
+      if (route.placeSlug) focusPlace(route.placeSlug);
+    })();
+
+  })();
+  </script>
+
+  <!-- Theme toggle -->
+  <script>
+  // Theme toggle: Auto (match system) / Light / Dark. Auto is the default;
+  // an explicit choice is stored in localStorage, Auto clears it.
+  (function () {
+    var KEY = 'melsom-guide-theme';
+    var root = document.documentElement;
+    var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+    var toggle = document.querySelector('.theme-toggle');
+    if (!toggle) return;
+
+    function storedPref() {
+      var p = null;
+      try { p = localStorage.getItem(KEY); } catch (e) {}
+      return (p === 'light' || p === 'dark') ? p : 'auto';
+    }
+
+    function effective(pref) {
+      if (pref === 'light' || pref === 'dark') return pref;
+      return (mq && mq.matches) ? 'dark' : 'light';
+    }
+
+    function render(pref) {
+      var theme = effective(pref);
+      root.setAttribute('data-theme', theme);
+      // Re-apply guide accent when switching to light; clear it for dark
+      var guideAccent = root.dataset.guideAccent;
+      if (guideAccent) {
+        if (theme === 'dark') {
+          root.style.removeProperty('--accent');
+        } else {
+          root.style.setProperty('--accent', guideAccent);
+        }
+      }
+      Array.prototype.forEach.call(toggle.querySelectorAll('button'), function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-theme-choice') === pref ? 'true' : 'false');
+      });
+    }
+
+    render(storedPref());
+
+    toggle.addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-theme-choice]');
+      if (!b) return;
+      var pref = b.getAttribute('data-theme-choice');
+      try {
+        if (pref === 'auto') localStorage.removeItem(KEY);
+        else localStorage.setItem(KEY, pref);
+      } catch (e2) {}
+      render(pref);
+    });
+
+    // Follow the system when on Auto.
+    if (mq) {
+      var onChange = function () { if (storedPref() === 'auto') render('auto'); };
+      if (mq.addEventListener) mq.addEventListener('change', onChange);
+      else if (mq.addListener) mq.addListener(onChange);
+    }
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,923 @@
+{
+  "slug": "raleigh",
+  "name": "Raleigh",
+  "title": "The Melsom Guide to Raleigh",
+  "intro": "Our favorite spots around Raleigh & Cary — the places we send friends and family to. Each one links to its website and Google Maps.",
+  "description": "Our favorite restaurants, coffee shops, bakeries, and attractions around Raleigh, NC.",
+  "accent": "#0F766E",
+  "ogImage": "/assets/og/raleigh.png",
+  "tags": [
+    { "id": "breakfast", "label": "Breakfast" },
+    { "id": "kids", "label": "Kids" }
+  ],
+  "sections": [
+    {
+      "id": "short-list",
+      "title": "Our Short List",
+      "blurb": "The places we keep coming back to.",
+      "color": "#0F766E",
+      "style": "highlight",
+      "places": [
+        {
+          "slug": "iris-coffee-lab",
+          "name": "Iris Coffee Lab",
+          "tags": ["breakfast"],
+          "description": "Great coffee <em>and</em> food — our go-to specialty spot.",
+          "lat": 35.7726,
+          "lng": -78.6426,
+          "links": [
+            { "label": "Website", "url": "https://www.iriscoffeelab.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Iris%20Coffee%20Lab%2C%20725%20Tucker%20St%2C%20Raleigh%2C%20NC%2027603" }
+          ]
+        },
+        {
+          "slug": "boulted-bread",
+          "name": "Boulted Bread",
+          "tags": [],
+          "description": "Best bakery in town — stone-milled breads & pastries.",
+          "lat": 35.7726,
+          "lng": -78.6465,
+          "links": [
+            { "label": "Website", "url": "https://boultedbread.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Boulted%20Bread%2C%20614%20West%20South%20St%2C%20Raleigh%2C%20NC%2027603" }
+          ]
+        },
+        {
+          "slug": "nc-state-farmers-market",
+          "name": "NC State Farmers Market",
+          "tags": [],
+          "description": "Open every day — produce, local goods, and a regular stop for us.",
+          "lat": 35.7617,
+          "lng": -78.6918,
+          "links": [
+            { "label": "Website", "url": "https://www.ncagr.gov/divisions/marketing/farmers-markets-agricultural-centers/state-farmers-market-raleigh" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=NC%20State%20Farmers%20Market%2C%201201%20Agriculture%20St%2C%20Raleigh%2C%20NC%2027603" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "baby-shower-2026",
+      "title": "Baby Shower 2026",
+      "blurb": "",
+      "color": "#7c3aed",
+      "places": [
+        {
+          "slug": "thomas-g-crowder-woodland-center",
+          "name": "Thomas G. Crowder Woodland Center",
+          "tags": [],
+          "description": "The location of the baby shower — a waterfront event venue nestled in Lake Johnson Park.",
+          "lat": 35.77197,
+          "lng": -78.70903,
+          "links": [
+            { "label": "Website", "url": "https://raleighnc.gov/parks-and-recreation/places/thomas-g-crowder-woodland-center" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Thomas%20G.%20Crowder%20Woodland%20Center%2C%205611%20Jaguar%20Park%20Dr%2C%20Raleigh%2C%20NC%2027606" }
+          ]
+        },
+        {
+          "slug": "trophy-brewing",
+          "name": "Trophy Brewing",
+          "tags": [],
+          "description": "Where the festivities will move after the baby shower — 12 rotating drafts, food trucks on site, and a great patio.",
+          "lat": 35.76164,
+          "lng": -78.65710,
+          "links": [
+            { "label": "Website", "url": "https://www.trophybrewing.com/brewery-taproom" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Trophy%20Brewing%2C%20656%20Maywood%20Ave%2C%20Raleigh%2C%20NC%2027603" }
+          ]
+        },
+        {
+          "slug": "sam-jones-bbq",
+          "name": "Sam Jones BBQ",
+          "tags": [],
+          "description": "Legendary whole-hog Eastern NC barbecue — we'll be having catering delivered by them for the shower.",
+          "lat": 35.7725,
+          "lng": -78.6596,
+          "links": [
+            { "label": "Website", "url": "https://www.samjonesbbq.com/raleigh" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Sam%20Jones%20BBQ%2C%20502%20W%20Lenoir%20St%2C%20Raleigh%2C%20NC%2027601" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "restaurants",
+      "title": "Restaurants",
+      "blurb": "We've eaten our way through Raleigh so you don't have to. (You should still do it though.)",
+      "color": "#e74c3c",
+      "groups": [
+        {
+          "title": "Breakfast & Brunch",
+          "blurb": "Diners, brunch plates, and morning-friendly restaurants.",
+          "places": [
+            {
+              "slug": "barrys-cafe",
+              "name": "Barry's Cafe",
+              "tags": ["breakfast"],
+              "description": "Classic diner breakfast, served all day.",
+              "lat": 35.7553,
+              "lng": -78.7203,
+              "links": [
+                { "label": "Website", "url": "https://barryscafe.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Barry%27s%20Cafe%2C%202851%20Jones%20Franklin%20Rd%2C%20Raleigh%2C%20NC%2027606" }
+              ]
+            },
+            {
+              "slug": "peck-and-plume",
+              "name": "Peck & Plume",
+              "tags": ["breakfast"],
+              "description": "Modern American dining inside The Mayton hotel.",
+              "lat": 35.7881,
+              "lng": -78.7775,
+              "links": [
+                { "label": "Website", "url": "https://www.peckandplume.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Peck%20%26%20Plume%2C%20301%20S%20Academy%20St%2C%20Cary%2C%20NC%2027511" }
+              ]
+            },
+            {
+              "slug": "press-coffee-crepes-and-cocktails",
+              "name": "Press Coffee, Crepes & Cocktails",
+              "tags": ["breakfast"],
+              "description": "Crepes & brunch — get there early, no reservations and busy on weekends.",
+              "lat": 35.782,
+              "lng": -78.647,
+              "links": [
+                { "label": "Website", "url": "https://pressccc.com/locations/raleigh/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Press%20Coffee%20Crepes%20Cocktails%2C%20400%20Hillsborough%20St%2C%20Raleigh%2C%20NC%2027603" }
+              ]
+            },
+            {
+              "slug": "nofo-the-pig",
+              "name": "NOFO @ the Pig",
+              "tags": ["breakfast"],
+              "description": "Quirky Southern café, gourmet market & gift shop in a former Piggly Wiggly in Five Points.",
+              "lat": 35.8039,
+              "lng": -78.6317,
+              "links": [
+                { "label": "Website", "url": "https://www.nofo.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=NOFO%20%40%20the%20Pig%2C%202014%20Fairview%20Rd%2C%20Raleigh%2C%20NC%2027608" }
+              ]
+            },
+            {
+              "slug": "state-farmers-market-restaurant",
+              "name": "State Farmers Market Restaurant",
+              "tags": ["breakfast"],
+              "description": "A popular spot for what we'd call a true Southern breakfast — giant biscuits, country ham, hotcakes and fresh local fare.",
+              "lat": 35.7614,
+              "lng": -78.6921,
+              "links": [
+                { "label": "Website", "url": "https://www.realbiscuits.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=State%20Farmers%20Market%20Restaurant%2C%201240%20Farmers%20Market%20Dr%2C%20Raleigh%2C%20NC%2027603" }
+              ]
+            },
+            {
+              "slug": "big-doms-bagel-shop",
+              "name": "Big Dom's Bagel Shop",
+              "tags": ["breakfast"],
+              "description": "Hand-rolled bagels & b'donuts in downtown Cary — go early before they sell out.",
+              "lat": 35.7913,
+              "lng": -78.7812,
+              "links": [
+                { "label": "Website", "url": "https://www.bigdomsbagelshop.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Big%20Dom%27s%20Bagel%20Shop%2C%20203%20E%20Chatham%20St%2C%20Cary%2C%20NC%2027511" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Asian & Sushi",
+          "blurb": "Sushi, hotpot, dim sum, Laotian, and Japanese favorites.",
+          "places": [
+            {
+              "slug": "kashin-japanese-restaurant",
+              "name": "Kashin Japanese Restaurant",
+              "tags": [],
+              "description": "Traditional Japanese-style food, great sushi, and poke bowls — authentic and family-owned.",
+              "lat": 35.7365,
+              "lng": -78.781,
+              "links": [
+                { "label": "Website", "url": "https://kashin.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Kashin%20Japanese%20Restaurant%2C%20309%20Crossroads%20Blvd%2C%20Cary%2C%20NC%2027518" }
+              ]
+            },
+            {
+              "slug": "o-ku",
+              "name": "O-Ku",
+              "tags": [],
+              "description": "Upscale sushi in downtown Raleigh.",
+              "lat": 35.7797,
+              "lng": -78.6463,
+              "links": [
+                { "label": "Website", "url": "https://www.o-kusushi.com/location/o-ku-raleigh/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=O-Ku%2C%20411%20W%20Hargett%20St%2C%20Raleigh%2C%20NC%2027603" }
+              ]
+            },
+            {
+              "slug": "brewery-bhavana",
+              "name": "Brewery Bhavana",
+              "tags": [],
+              "description": "Dim sum + brewery + flower shop + bookstore — a true Raleigh original.",
+              "lat": 35.7791,
+              "lng": -78.6381,
+              "links": [
+                { "label": "Website", "url": "https://brewerybhavana.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Brewery%20Bhavana%2C%20218%20S%20Blount%20St%2C%20Raleigh%2C%20NC%2027601" }
+              ]
+            },
+            {
+              "slug": "bida-manda",
+              "name": "Bida Manda",
+              "tags": [],
+              "description": "Laotian restaurant & bar in the heart of downtown — from the team behind Brewery Bhavana.",
+              "lat": 35.7789,
+              "lng": -78.6382,
+              "links": [
+                { "label": "Website", "url": "https://www.bidamanda.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Bida%20Manda%2C%20222%20S%20Blount%20St%2C%20Raleigh%2C%20NC%2027601" }
+              ]
+            },
+            {
+              "slug": "szechuan-mansion-hotpot",
+              "name": "Szechuan Mansion Hotpot",
+              "tags": [],
+              "description": "Authentic Szechuan hotpot — build your own simmering bowl at the table.",
+              "lat": 35.7565,
+              "lng": -78.7714,
+              "links": [
+                { "label": "Website", "url": "https://szechuanhotpot.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Szechuan%20Mansion%20Hotpot%2C%201353%20Kildaire%20Farm%20Rd%2C%20Cary%2C%20NC%2027511" }
+              ]
+            },
+            {
+              "slug": "sushi-suyu",
+              "name": "Sushi Suyu",
+              "tags": [],
+              "description": "Japanese sushi with Korean-inspired flair, tucked into the cute little downtown of Apex.",
+              "lat": 35.7328,
+              "lng": -78.8499,
+              "links": [
+                { "label": "Website", "url": "https://www.sushisuyu.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Sushi%20Suyu%2C%20301%20N%20Salem%20St%2C%20Apex%2C%20NC%2027502" }
+              ]
+            },
+            {
+              "slug": "taipei-101",
+              "name": "Taipei 101",
+              "tags": [],
+              "description": "Taiwanese restaurant in downtown Cary — a longtime local favorite.",
+              "lat": 35.7916,
+              "lng": -78.7832,
+              "links": [
+                { "label": "Website", "url": "https://carytaipei101nc.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Taipei%20101%2C%20121%20E%20Chatham%20St%2C%20Cary%2C%20NC%2027511" }
+              ]
+            },
+            {
+              "slug": "the-cowfish-sushi-burger-bar",
+              "name": "The Cowfish Sushi Burger Bar",
+              "tags": [],
+              "description": "The place to go for the best of both worlds — burgers and sushi (and their famous \"burgushi\") at North Hills.",
+              "lat": 35.8467,
+              "lng": -78.6545,
+              "links": [
+                { "label": "Website", "url": "https://thecowfish.com/raleigh/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=The%20Cowfish%20Sushi%20Burger%20Bar%2C%204208%20Six%20Forks%20Rd%2C%20Raleigh%2C%20NC%2027609" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Dinner & Date Night",
+          "blurb": "Sit-down spots for a proper meal out.",
+          "places": [
+            {
+              "slug": "bosphorous",
+              "name": "Bosphorous",
+              "tags": [],
+              "description": "Turkish — a longtime favorite.",
+              "lat": 35.7909,
+              "lng": -78.7762,
+              "links": [
+                { "label": "Website", "url": "https://www.bosphorus-nc.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Bosphorus%20Restaurant%2C%20329%20N%20Harrison%20Ave%2C%20Cary%2C%20NC%2027513" }
+              ]
+            },
+            {
+              "slug": "whiskey-kitchen",
+              "name": "Whiskey Kitchen",
+              "tags": [],
+              "description": "Inventive Southern dishes, craft cocktails and 300+ whiskies in a converted garage by Nash Square. Also serves lunch Mon–Fri and weekend brunch starting at 11 AM.",
+              "lat": 35.7786,
+              "lng": -78.6449,
+              "links": [
+                { "label": "Website", "url": "https://www.whiskey.kitchen/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Whiskey%20Kitchen%2C%20201%20W%20Martin%20St%2C%20Raleigh%2C%20NC%2027601" }
+              ]
+            },
+            {
+              "slug": "pooles-diner",
+              "name": "Poole's Diner",
+              "tags": [],
+              "description": "Ashley Christensen's beloved seasonal take on diner comfort food — don't miss the macaroni au gratin.",
+              "lat": 35.7783,
+              "lng": -78.6407,
+              "links": [
+                { "label": "Website", "url": "https://ac-restaurants.com/pooles/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Poole%27s%20Diner%2C%20428%20S%20McDowell%20St%2C%20Raleigh%2C%20NC%2027601" }
+              ]
+            },
+            {
+              "slug": "superica",
+              "name": "Superica",
+              "tags": [],
+              "description": "Lively Tex-Mex from chef Ford Fry, in the cute little Fenton town center of Cary.",
+              "lat": 35.7443,
+              "lng": -78.8207,
+              "links": [
+                { "label": "Website", "url": "https://superica.com/cary/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Superica%2C%2025%20Fenton%20Main%20St%2C%20Cary%2C%20NC%2027511" }
+              ]
+            },
+            {
+              "slug": "gravy",
+              "name": "Gravy",
+              "tags": [],
+              "description": "Italian-American kitchen in downtown Raleigh — house-made pasta and scratch-made sauce.",
+              "lat": 35.7780,
+              "lng": -78.6356,
+              "links": [
+                { "label": "Website", "url": "https://www.gravyraleigh.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Gravy%2C%20135%20S%20Wilmington%20St%2C%20Raleigh%2C%20NC%2027601" }
+              ]
+            },
+            {
+              "slug": "irregardless",
+              "name": "Irregardless",
+              "tags": [],
+              "description": "Raleigh institution since 1975 — farm-to-table cooking, live music, and a warm neighborhood feel.",
+              "lat": 35.7766,
+              "lng": -78.6494,
+              "links": [
+                { "label": "Website", "url": "https://www.irregardless.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Irregardless%20Cafe%2C%20901%20W%20Morgan%20St%2C%20Raleigh%2C%20NC%2027603" }
+              ]
+            },
+            {
+              "slug": "tamasha",
+              "name": "Tamasha",
+              "tags": [],
+              "description": "Modern Indian at North Hills — one of OpenTable & People's 50 Most Beautiful Restaurants in America and an Esquire Best New Restaurant.",
+              "lat": 35.8468,
+              "lng": -78.6543,
+              "links": [
+                { "label": "Website", "url": "https://tamashanc.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Tamasha%2C%204200%20Six%20Forks%20Rd%2C%20Raleigh%2C%20NC%2027609" }
+              ]
+            },
+            {
+              "slug": "naan-house",
+              "name": "Naan House",
+              "tags": [],
+              "description": "We've never actually physically eaten here, but it's a regular takeout spot for us — great curries, biryanis, and fresh-baked naan.",
+              "lat": 35.7241,
+              "lng": -78.8499,
+              "links": [
+                { "label": "Website", "url": "https://naan-house.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Naan%20House%20Indian%20Bistro%2C%205460%20Apex%20Peakway%2C%20Apex%2C%20NC%2027502" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Casual & Quick",
+          "blurb": "Easy stops for lunch, burgers, sandwiches, and lighter food.",
+          "places": [
+            {
+              "slug": "standard-beer-food",
+              "name": "Standard Beer + Food",
+              "tags": [],
+              "description": "Relaxed neighborhood pub by Person St. Plaza — a great place to stop for a burger and fries.",
+              "lat": 35.7858,
+              "lng": -78.6291,
+              "links": [
+                { "label": "Website", "url": "https://standardbeerandfood.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Standard%20Beer%20%2B%20Food%2C%20205%20E%20Franklin%20St%2C%20Raleigh%2C%20NC%2027604" }
+              ]
+            },
+            {
+              "slug": "eastcut-sandwich-bar",
+              "name": "Eastcut Sandwich Bar",
+              "tags": [],
+              "description": "A great lunch spot at Raleigh Iron Works — creative, generously stacked sandwiches.",
+              "lat": 35.8013,
+              "lng": -78.6196,
+              "links": [
+                { "label": "Website", "url": "https://eastcutsandwich.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Eastcut%20Sandwich%20Bar%2C%201101%20E%20Whitaker%20Mill%20Rd%2C%20Raleigh%2C%20NC%2027604" }
+              ]
+            },
+            {
+              "slug": "raleigh-raw",
+              "name": "Raleigh Raw",
+              "tags": [],
+              "description": "Downtown juice bar & café for cold-pressed juices, smoothies and healthy grain bowls.",
+              "lat": 35.7796,
+              "lng": -78.6389,
+              "links": [
+                { "label": "Website", "url": "https://www.raleighraw.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Raleigh%20Raw%2C%207%20W%20Hargett%20St%2C%20Raleigh%2C%20NC%2027601" }
+              ]
+            },
+            {
+              "slug": "dampf-good-bbq",
+              "name": "DAMPF Good BBQ",
+              "tags": [],
+              "description": "Texas-style craft BBQ from brothers Nick and Bryce Dampf — brisket and ribs smoked low and slow, set up on Phillips Farms. Open Thu–Sat only.",
+              "lat": 35.7663,
+              "lng": -78.9150,
+              "links": [
+                { "label": "Website", "url": "https://www.dampfgoodbbq.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=DAMPF%20Good%20BBQ%2C%206800%20Good%20Hope%20Church%20Rd%2C%20Cary%2C%20NC%2027519" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coffee-and-tea",
+      "title": "Coffee & Tea",
+      "blurb": "We love specialty coffee (and a good cup of tea) — here's where we go.",
+      "color": "#795548",
+      "places": [
+        {
+          "slug": "the-williams-house",
+          "name": "The Williams House",
+          "tags": [],
+          "description": "This has turned into our coffee shop Fridays spot. They serve coffee, beer, and wine, with Trivia on Thursdays and live music on Saturdays.",
+          "lat": 35.7915,
+          "lng": -78.7812,
+          "links": [
+            { "label": "Website", "url": "https://www.thewilliamshousecary.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=The%20Williams%20House%2C%20210%20E%20Chatham%20St%2C%20Cary%2C%20NC%2027511" }
+          ]
+        },
+        {
+          "slug": "black-and-white-coffee-at-videri",
+          "name": "Black & White Coffee at Videri",
+          "tags": [],
+          "description": "Coffee & chocolate under one roof at the Videri factory.",
+          "lat": 35.7782,
+          "lng": -78.6471,
+          "links": [
+            { "label": "Website", "url": "https://www.blackwhiteroasters.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Black%20%26%20White%20Coffee%20at%20Videri%2C%20327%20W%20Davie%20St%2C%20Raleigh%2C%20NC%2027601" }
+          ]
+        },
+        {
+          "slug": "fount-coffee-kitchen",
+          "name": "Fount Coffee + Kitchen",
+          "tags": ["breakfast"],
+          "description": "Bright, welcoming spot near West Cary with great coffee and a full food menu.",
+          "lat": 35.8074,
+          "lng": -78.8335,
+          "links": [
+            { "label": "Website", "url": "https://fountcoffee.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Fount%20Coffee%20%2B%20Kitchen%2C%2010954%20Chapel%20Hill%20Rd%2C%20Morrisville%2C%20NC%2027560" }
+          ]
+        },
+        {
+          "slug": "feature-flora",
+          "name": "Feature Flora",
+          "tags": [],
+          "description": "Part curated home-and-garden shop, part tea house — a lovely place to slow down over a pot of tea.",
+          "lat": 35.7727,
+          "lng": -78.6467,
+          "links": [
+            { "label": "Website", "url": "https://www.featureflora.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Feature%20Flora%2C%20612%20W%20South%20St%2C%20Raleigh%2C%20NC%2027603" }
+          ]
+        },
+        {
+          "slug": "cocoa-cinnamon",
+          "name": "Cocoa Cinnamon",
+          "tags": [],
+          "description": "Award-winning Durham café pouring Little Waves Coffee Roasters (a favorite of Kassi's), plus spiced drinks, hot chocolate and tea — and don't miss the freshly made churros.",
+          "lat": 36.005,
+          "lng": -78.924,
+          "links": [
+            { "label": "Website", "url": "https://cocoacinnamon.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Cocoa%20Cinnamon%2C%20420%20W%20Geer%20St%2C%20Durham%2C%20NC%2027701" }
+          ]
+        },
+        {
+          "slug": "lucky-tree-cafe",
+          "name": "Lucky Tree Cafe",
+          "tags": [],
+          "description": "Both a coffeehouse and an art gallery — locally roasted coffee and teas surrounded by work from local artists.",
+          "lat": 35.7853,
+          "lng": -78.6994,
+          "links": [
+            { "label": "Website", "url": "https://www.luckytreeraleigh.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Lucky%20Tree%20Cafe%2C%203801%20Hillsborough%20St%2C%20Raleigh%2C%20NC%2027607" }
+          ]
+        },
+        {
+          "slug": "cup-a-joe",
+          "name": "Cup A Joe",
+          "tags": [],
+          "description": "A longtime favorite just off NC State's campus — a popular spot to settle in with a book or laptop.",
+          "lat": 35.7847,
+          "lng": -78.6846,
+          "links": [
+            { "label": "Website", "url": "https://cupajoe.com/hillsborough-street/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Cup%20A%20Joe%2C%203100%20Hillsborough%20St%2C%20Raleigh%2C%20NC%2027607" }
+          ]
+        },
+        {
+          "slug": "the-optimist",
+          "name": "The Optimist",
+          "tags": [],
+          "description": "Bright specialty coffee shop pouring Black & White roasts — a comfy neighborhood spot for remote work.",
+          "lat": 35.8007,
+          "lng": -78.6193,
+          "links": [
+            { "label": "Website", "url": "https://www.theoptimistraleigh.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=The%20Optimist%2C%201000%20Brookside%20Dr%2C%20Raleigh%2C%20NC%2027604" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bakeries",
+      "title": "Bakeries",
+      "blurb": "Donuts, bagels, and the good stuff.",
+      "color": "#d97706",
+      "places": [
+        {
+          "slug": "paul-and-jack-bakery",
+          "name": "Paul & Jack Bakery",
+          "tags": [],
+          "description": "KILLER Boston creme donut. Now with a second location in Cary (1881 Lake Pine Dr).",
+          "lat": 35.7835,
+          "lng": -78.649,
+          "links": [
+            { "label": "Website", "url": "https://www.paulandjackbakery.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Paul%20%26%20Jack%20Bakery%2C%20911%20N%20West%20St%2C%20Raleigh%2C%20NC%2027603" }
+          ]
+        },
+        {
+          "slug": "brecotea",
+          "name": "Brecotea",
+          "tags": [],
+          "description": "Asian-fusion bakery & café — soft buns, pastries, cakes, plus boba and coffee.",
+          "lat": 35.7655,
+          "lng": -78.774,
+          "links": [
+            { "label": "Website", "url": "https://cary.brecotea.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Brecotea%2C%201144%20Kildaire%20Farm%20Rd%2C%20Cary%2C%20NC%2027511" }
+          ]
+        },
+        {
+          "slug": "bakers-dozen-donuts",
+          "name": "Baker's Dozen Donuts",
+          "tags": ["breakfast"],
+          "description": "Made-to-order donuts plus bagels, muffins and pastries.",
+          "lat": 35.7607,
+          "lng": -78.7173,
+          "links": [
+            { "label": "Website", "url": "https://bakersdozendonuts.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Baker%27s%20Dozen%20Donuts%2C%201307%20Buck%20Jones%20Rd%2C%20Raleigh%2C%20NC%2027606" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ice-cream",
+      "title": "Ice Cream",
+      "blurb": "Scoops, custard, and creameries worth the calories.",
+      "color": "#db2777",
+      "places": [
+        {
+          "slug": "andias-ice-cream",
+          "name": "Andia's Ice Cream",
+          "tags": ["kids"],
+          "description": "Homemade ice cream with rotating flavors — two Cary locations.",
+          "lat": 35.7808,
+          "lng": -78.8538,
+          "links": [
+            { "label": "Website", "url": "https://andiasicecream.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Andia%27s%20Ice%20Cream%2C%2010120%20Green%20Level%20Church%20Rd%2C%20Cary%2C%20NC%2027519" }
+          ]
+        },
+        {
+          "slug": "fresh-local-ice-cream",
+          "name": "FRESH. Local Ice Cream",
+          "tags": ["kids"],
+          "description": "Mom-and-pop shop with unique flavors made from locally-sourced ingredients.",
+          "lat": 35.8766,
+          "lng": -78.6797,
+          "links": [
+            { "label": "Website", "url": "https://www.freshlocalicecream.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=FRESH.%20Local%20Ice%20Cream%2C%206033%20Glenwood%20Ave%2C%20Raleigh%2C%20NC%2027612" }
+          ]
+        },
+        {
+          "slug": "jts-creamery",
+          "name": "JT's Creamery",
+          "tags": ["kids"],
+          "description": "Award-winning homemade ice cream in downtown Holly Springs.",
+          "lat": 35.6516,
+          "lng": -78.834,
+          "links": [
+            { "label": "Website", "url": "https://www.jtscreamery.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=JT%27s%20Creamery%2C%20300%20S%20Main%20St%2C%20Holly%20Springs%2C%20NC%2027540" }
+          ]
+        },
+        {
+          "slug": "goodberrys-frozen-custard",
+          "name": "Goodberry's Frozen Custard",
+          "tags": ["kids"],
+          "description": "A Triangle institution — all-natural frozen custard made fresh hourly since 1988. Multiple locations across Raleigh and Cary.",
+          "lat": 35.7938,
+          "lng": -78.6619,
+          "links": [
+            { "label": "Website", "url": "https://www.goodberrys.com/" }
+          ]
+        },
+        {
+          "slug": "howling-cow-dairy-education-center-and-creamery",
+          "name": "Howling Cow Dairy Education Center & Creamery",
+          "tags": ["kids"],
+          "description": "NC State's student-run creamery right on the dairy farm — premium ice cream plus a learning center.",
+          "lat": 35.7641,
+          "lng": -78.6742,
+          "links": [
+            { "label": "Website", "url": "https://howlingcow.ncsu.edu/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Howling%20Cow%20Dairy%20Education%20Center%20and%20Creamery%2C%20100%20Dairy%20Ln%2C%20Raleigh%2C%20NC%2027603" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "attractions",
+      "title": "Attractions",
+      "blurb": "Parks, markets, museums, and a few day trips worth the drive.",
+      "color": "#2563eb",
+      "groups": [
+        {
+          "title": "Shops & Markets",
+          "blurb": "Local markets, specialty groceries, and places to browse.",
+          "places": [
+            {
+              "slug": "turkuaz-market",
+              "name": "Turkuaz Market",
+              "tags": [],
+              "description": "Turkish grocery right next door to Bosphorous.",
+              "lat": 35.7911,
+              "lng": -78.776,
+              "links": [
+                { "label": "Website", "url": "https://www.turkuazmarketusa.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Turkuaz%20Market%2C%20329%20N%20Harrison%20Ave%2C%20Cary%2C%20NC%2027513" }
+              ]
+            },
+            {
+              "slug": "golden-hex",
+              "name": "Golden Hex",
+              "tags": [],
+              "description": "Our favorite European supermarket — where we buy the frozen dumplings.",
+              "lat": 35.7998,
+              "lng": -78.8078,
+              "links": [
+                { "label": "Website", "url": "https://www.goldenhex.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Golden%20Hex%2C%201200%20NW%20Maynard%20Rd%2C%20Cary%2C%20NC%2027513" }
+              ]
+            },
+            {
+              "slug": "north-hills",
+              "name": "North Hills",
+              "tags": [],
+              "description": "Raleigh's midtown shopping & dining hub.",
+              "lat": 35.8465,
+              "lng": -78.6568,
+              "links": [
+                { "label": "Website", "url": "https://www.visitnorthhills.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=North%20Hills%2C%204321%20Lassiter%20at%20North%20Hills%20Ave%2C%20Raleigh%2C%20NC%2027609" }
+              ]
+            },
+            {
+              "slug": "ebisu-life-store",
+              "name": "Ebisu Life Store",
+              "tags": [],
+              "description": "Japanese & Asian lifestyle shop on Hillsborough Street — stationery, snacks, homewares and more.",
+              "lat": 35.7847,
+              "lng": -78.6847,
+              "links": [
+                { "label": "Website", "url": "https://www.usebisu.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Ebisu%20Life%20Store%2C%203012%20Hillsborough%20St%2C%20Raleigh%2C%20NC%2027607" }
+              ]
+            },
+            {
+              "slug": "hmart",
+              "name": "H Mart",
+              "tags": [],
+              "description": "Large Korean-American supermarket with an incredible selection of Asian groceries, fresh produce, and a food court.",
+              "lat": 35.7897,
+              "lng": -78.8493,
+              "links": [
+                { "label": "Website", "url": "https://www.hmart.com/store/cary-nc-27519/56106753-370a-42bd-b08f-1f87709ddfb2" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=H%20Mart%2C%201961%20High%20House%20Rd%2C%20Cary%2C%20NC%2027519" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Parks & Gardens",
+          "blurb": "Green space, gardens, trails, and outdoor wandering.",
+          "places": [
+            {
+              "slug": "downtown-cary-park",
+              "name": "Downtown Cary Park",
+              "tags": ["kids"],
+              "description": "Beautiful new park with free Movie Nights on the Great Lawn on Fridays.",
+              "lat": 35.7893,
+              "lng": -78.7773,
+              "links": [
+                { "label": "Website", "url": "https://downtowncarypark.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Downtown%20Cary%20Park%2C%20327%20S%20Academy%20St%2C%20Cary%2C%20NC%2027511" }
+              ]
+            },
+            {
+              "slug": "dorothea-dix-park",
+              "name": "Dorothea Dix Park",
+              "tags": ["kids"],
+              "description": "Rolling hills and skyline views — home to Gipson Play Plaza, the 18.5-acre adventure playground that Lilli & Jack love.",
+              "lat": 35.7611,
+              "lng": -78.6666,
+              "links": [
+                { "label": "Website", "url": "https://dorotheadixpark.org/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Dorothea%20Dix%20Park%2C%202105%20Umstead%20Dr%2C%20Raleigh%2C%20NC%2027603" }
+              ]
+            },
+            {
+              "slug": "sarah-p-duke-gardens",
+              "name": "Sarah P. Duke Gardens",
+              "tags": [],
+              "description": "Gorgeous gardens — a drive out, but it lets you see Duke's campus.",
+              "lat": 36.0013,
+              "lng": -78.9371,
+              "links": [
+                { "label": "Website", "url": "https://gardens.duke.edu/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Sarah%20P.%20Duke%20Gardens%2C%20420%20Anderson%20St%2C%20Durham%2C%20NC%2027705" }
+              ]
+            },
+            {
+              "slug": "pullen-park",
+              "name": "Pullen Park",
+              "tags": ["kids"],
+              "description": "Historic 1911 carousel, train and boats — perfect for the kids.",
+              "lat": 35.7787,
+              "lng": -78.661,
+              "links": [
+                { "label": "Website", "url": "https://raleighnc.gov/parks-and-recreation/places/pullen-park" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Pullen%20Park%2C%20520%20Ashe%20Ave%2C%20Raleigh%2C%20NC%2027606" }
+              ]
+            },
+            {
+              "slug": "jc-raulston-arboretum",
+              "name": "JC Raulston Arboretum",
+              "tags": [],
+              "description": "Free, lovely NC State arboretum — an easy stroll any season.",
+              "lat": 35.7862,
+              "lng": -78.6943,
+              "links": [
+                { "label": "Website", "url": "https://jcra.ncsu.edu/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=JC%20Raulston%20Arboretum%2C%204415%20Beryl%20Rd%2C%20Raleigh%2C%20NC%2027606" }
+              ]
+            },
+            {
+              "slug": "historic-yates-mill-county-park",
+              "name": "Historic Yates Mill County Park",
+              "tags": ["kids"],
+              "description": "Restored 18th-century gristmill with a pond and trails — a peaceful spot for a walk.",
+              "lat": 35.7267,
+              "lng": -78.6726,
+              "links": [
+                { "label": "Website", "url": "https://www.wake.gov/departments-government/parks-recreation-open-space/all-parks-trails/historic-yates-mill-county-park" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Historic%20Yates%20Mill%20County%20Park%2C%204620%20Lake%20Wheeler%20Rd%2C%20Raleigh%2C%20NC%2027603" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Museums & Family",
+          "blurb": "Indoor exhibits and kid-friendly outings.",
+          "places": [
+            {
+              "slug": "marbles-kids-museum",
+              "name": "Marbles Kids Museum",
+              "tags": ["kids"],
+              "description": "Two floors of hands-on play for ages 0–10.",
+              "lat": 35.7823,
+              "lng": -78.634,
+              "links": [
+                { "label": "Website", "url": "https://marbleskidsmuseum.org/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Marbles%20Kids%20Museum%2C%20201%20E%20Hargett%20St%2C%20Raleigh%2C%20NC%2027601" }
+              ]
+            },
+            {
+              "slug": "kings-bowl-north-hills",
+              "name": "Kings Bowl — North Hills",
+              "tags": ["kids"],
+              "description": "Bowling, billiards, arcade games and dining at North Hills.",
+              "lat": 35.8474,
+              "lng": -78.654,
+              "links": [
+                { "label": "Website", "url": "https://www.playatkings.com/location/north-hills/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Kings%20Bowl%20North%20Hills%2C%20141%20Park%20at%20N%20Hills%20St%2C%20Raleigh%2C%20NC%2027609" }
+              ]
+            },
+            {
+              "slug": "nc-museum-of-natural-sciences",
+              "name": "NC Museum of Natural Sciences",
+              "tags": ["kids"],
+              "description": "Free admission — the Southeast's largest natural history museum, with dinosaurs, live animals and hands-on exhibits.",
+              "lat": 35.7835,
+              "lng": -78.638,
+              "links": [
+                { "label": "Website", "url": "https://www.naturalsciences.org/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=NC%20Museum%20of%20Natural%20Sciences%2C%2011%20W%20Jones%20St%2C%20Raleigh%2C%20NC%2027601" }
+              ]
+            },
+            {
+              "slug": "nc-museum-of-art",
+              "name": "NC Museum of Art",
+              "tags": ["kids"],
+              "description": "Free admission and a great collection — plus a 164-acre Museum Park with outdoor walking trails dotted with art installations.",
+              "lat": 35.8016,
+              "lng": -78.6803,
+              "links": [
+                { "label": "Website", "url": "https://ncartmuseum.org/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=North%20Carolina%20Museum%20of%20Art%2C%202110%20Blue%20Ridge%20Rd%2C%20Raleigh%2C%20NC%2027607" }
+              ]
+            },
+            {
+              "slug": "frankies",
+              "name": "Frankie's",
+              "tags": ["kids"],
+              "description": "Massive family fun park with go-karts, mini golf, laser tag, bumper boats, batting cages, and a huge arcade — pay as you play, no admission fee.",
+              "lat": 35.9193,
+              "lng": -78.7940,
+              "links": [
+                { "label": "Website", "url": "https://frankies.com/raleigh/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Frankie%27s%20Fun%20Park%2C%2011190%20Fun%20Park%20Dr%2C%20Raleigh%2C%20NC%2027617" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Drinks & Games",
+          "blurb": "Adult-friendly hangouts, arcades, and a drive-worthy estate stop.",
+          "places": [
+            {
+              "slug": "zinchouse-winery-and-brewery",
+              "name": "ZincHouse Winery & Brewery",
+              "tags": [],
+              "description": "A fun spot on an 87-acre estate — worth the drive.",
+              "lat": 36.003,
+              "lng": -78.798,
+              "links": [
+                { "label": "Website", "url": "https://www.zinchouse.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=ZincHouse%20Winery%20%26%20Brewery%2C%206225%20Wake%20Forest%20Hwy%2C%20Durham%2C%20NC%2027703" }
+              ]
+            },
+            {
+              "slug": "boxcar-bar-arcade",
+              "name": "Boxcar Bar + Arcade",
+              "tags": [],
+              "description": "Dozens of arcade games, a full bar, and a live-music patio — locations in Raleigh's Warehouse District and downtown Durham.",
+              "lat": 35.778,
+              "lng": -78.6474,
+              "links": [
+                { "label": "Raleigh", "url": "https://theboxcarbar.com/raleigh/" },
+                { "label": "Durham", "url": "https://theboxcarbar.com/durham/" }
+              ]
+            },
+            {
+              "slug": "toyo-sake-shop",
+              "name": "Toyo Sake Shop & Tasting Bar",
+              "tags": [],
+              "description": "2,000+ sq ft bottle shop with 250+ varieties of sake, curated tasting flights, Japanese whisky, shochu, and rotating Hitachino Nest craft beers on draft.",
+              "lat": 35.7915,
+              "lng": -78.7651,
+              "links": [
+                { "label": "Website", "url": "https://toyosake.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Toyo%20Sake%20Shop%2C%20748%20E%20Chatham%20St%2C%20Cary%2C%20NC%2027511" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

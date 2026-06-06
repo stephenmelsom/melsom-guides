@@ -1,0 +1,626 @@
+:root {
+  --bg: #ffffff;
+  --bg-tint: #fafafa;
+  --text: #1a1a1a;
+  --muted: #5b6770;
+  --accent: #0f766e;
+  --accent-soft: #e6f1ef;
+  --border: #e6e8ea;
+  --nav-bg: rgba(255, 255, 255, 0.92);
+  --accent-contrast: #ffffff;
+  --radius: 12px;
+  --maxw: 980px;
+}
+
+/* ---------- Dark theme ---------- */
+/* The effective theme (light/dark) is set on <html data-theme> by JS;
+   "Auto" resolves to the system preference. */
+[data-theme="dark"] {
+  --bg: #0e1417;
+  --bg-tint: #161d21;
+  --text: #e7eaec;
+  --muted: #9aa6ac;
+  --accent: #2dd4bf;
+  --accent-soft: #14302c;
+  --border: #29333a;
+  --nav-bg: rgba(14, 20, 23, 0.9);
+  --accent-contrast: #06231f;
+}
+
+[data-theme="dark"] .pill.kids {
+  color: #fbbf24;
+  background: #3a2c12;
+  border-color: #3a2c12;
+}
+
+[data-theme="dark"] .pill.breakfast {
+  color: #93c5fd;
+  background: #18243f;
+  border-color: #18243f;
+}
+
+/* Darken the map tiles while leaving the coloured pins untouched */
+[data-theme="dark"] .leaflet-tile {
+  filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(0.9);
+}
+
+[data-theme="dark"] .leaflet-container {
+  background: #0a0f11;
+}
+
+[data-theme="dark"] .map-legend {
+  background: var(--bg-tint);
+  color: var(--text);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .leaflet-bar a {
+  background: var(--bg-tint);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .leaflet-control-attribution {
+  background: rgba(22, 29, 33, 0.85);
+  color: var(--muted);
+}
+
+[data-theme="dark"] .leaflet-control-attribution a {
+  color: var(--accent);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: relative;
+  padding: 3rem 1.25rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ---------- Theme toggle ---------- */
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-tint);
+}
+
+.theme-toggle button {
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.theme-toggle button:hover {
+  color: var(--text);
+}
+
+.theme-toggle button[aria-pressed="true"] {
+  color: var(--accent-contrast);
+  background: var(--accent);
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.site-header .accent-rule {
+  width: 48px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin: 0.85rem auto 1rem;
+}
+
+.site-header .intro {
+  margin: 0 auto;
+  max-width: 36rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* ---------- Sticky nav ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--nav-bg);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0.6rem 0.75rem;
+  max-width: var(--maxw);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 0.5rem;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ---------- Filters ---------- */
+.filters {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.filters-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.filter-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.filter-search {
+  flex: 1;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.filter-search label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.filter-search input {
+  width: 100%;
+  min-height: 2.45rem;
+  padding: 0.55rem 0.75rem;
+  color: var(--text);
+  background: var(--bg-tint);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+}
+
+.filter-search input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.filter-count {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.card[hidden],
+.section[hidden],
+.section-group[hidden],
+.filter-empty[hidden] {
+  display: none;
+}
+
+.filter-empty {
+  margin: 2rem 0 0;
+  padding: 1.2rem;
+  color: var(--muted);
+  text-align: center;
+  background: var(--bg-tint);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+/* ---------- Filter chips ---------- */
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  appearance: none;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-tint);
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: none;
+}
+
+.chip:hover {
+  border-color: var(--chip-color, var(--accent));
+  color: var(--text);
+}
+
+.chip--section[aria-pressed="true"] {
+  background: var(--chip-color);
+  border-color: var(--chip-color);
+  color: #fff;
+}
+
+.chip--tag[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+/* ---------- Guide dropdown in h1 ---------- */
+.guide-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.guide-dropdown-btn {
+  appearance: none;
+  font: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid var(--accent);
+  cursor: pointer;
+  padding: 0 0.1em 0.05em;
+  line-height: inherit;
+}
+
+.guide-dropdown-btn:hover {
+  opacity: 0.8;
+}
+
+.guide-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  list-style: none;
+  margin: 0;
+  padding: 0.3rem 0;
+  min-width: 160px;
+  z-index: 100;
+}
+
+.guide-dropdown-menu li {
+  padding: 0.55rem 1.1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  outline: none;
+}
+
+.guide-dropdown-menu li:hover,
+.guide-dropdown-menu li:focus {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.guide-dropdown-menu .guide-menu-current {
+  color: var(--accent);
+}
+
+/* ---------- Sections ---------- */
+main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.25rem 2rem;
+}
+
+.section {
+  scroll-margin-top: 4.5rem;
+  padding: 2.5rem 0 0.5rem;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.section-head p {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.section-group {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.section-head + .grid,
+.section-head + .section-group {
+  margin-top: 1.25rem;
+}
+
+.subsection-head {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.subsection-head h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.subsection-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Card grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.15rem 1rem;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.12rem;
+  font-weight: 700;
+}
+
+.pill {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: var(--bg-tint);
+  border: 1px solid var(--border);
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+}
+
+.pill.kids {
+  color: #b45309;
+  background: #fdf1dc;
+  border-color: #fdf1dc;
+}
+
+.pill.breakfast {
+  color: #2563eb;
+  background: #e8f0fe;
+  border-color: #e8f0fe;
+}
+
+.card p {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card-links {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.card-links a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Short list emphasis ---------- */
+.shortlist .card {
+  border-left: 4px solid var(--accent);
+  background: var(--bg-tint);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 2.5rem;
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Map ---------- */
+
+
+.map-section {
+  border-bottom: 1px solid var(--border);
+}
+
+#map {
+  height: 450px;
+  width: 100%;
+}
+
+.map-legend {
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 0;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+}
+
+/* Custom map pins (override Leaflet's default white div-icon box) */
+.map-pin-wrap {
+  background: transparent;
+  border: 0;
+}
+
+.map-pin {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+/* ---------- Card <-> map linking ---------- */
+.card--mappable {
+  cursor: pointer;
+}
+
+.card--mappable:hover {
+  border-color: var(--accent);
+}
+
+/* Keep links and the text inside them behaving like normal text/links */
+.card--mappable a {
+  cursor: pointer;
+}
+
+@keyframes card-flash {
+  0%   { box-shadow: 0 0 0 3px var(--accent); }
+  100% { box-shadow: 0 0 0 3px rgba(15, 118, 110, 0); }
+}
+
+.card--flash {
+  animation: card-flash 1.6s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card--flash {
+    animation: none;
+    box-shadow: 0 0 0 3px var(--accent);
+  }
+}
+
+/* On narrow screens, stack the toggle above the centered title */
+@media (max-width: 600px) {
+  .site-header {
+    padding-top: 1.5rem;
+  }
+  .theme-toggle {
+    position: static;
+    display: flex;
+    width: max-content;
+    margin: 0 auto 1.25rem;
+  }
+  .filters-inner {
+    padding: 0.6rem 1rem 0.85rem;
+  }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 480px) {
+  .site-header {
+    padding-top: 1.5rem;
+  }
+  .card-links {
+    gap: 1.25rem;
+  }
+  #map {
+    height: 300px;
+  }
+}
