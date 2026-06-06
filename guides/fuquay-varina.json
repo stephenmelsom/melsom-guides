@@ -1,0 +1,304 @@
+{
+  "slug": "fuquay-varina",
+  "name": "Fuquay-Varina",
+  "title": "The Melsom Guide to Fuquay-Varina",
+  "intro": "Hard to pronounce, easy to live in. This is a list of our local favorites.",
+  "description": "Our favorite restaurants, coffee, ice cream, and attractions around Fuquay-Varina, NC.",
+  "accent": "#C2410C",
+  "ogImage": "/assets/og/fuquay-varina.png",
+  "tags": [],
+  "sections": [
+    {
+      "id": "restaurants",
+      "title": "Restaurants",
+      "blurb": "Our go-to spots for a meal out.",
+      "color": "#e74c3c",
+      "places": [
+        {
+          "slug": "khao-sen",
+          "name": "Khao Sen",
+          "tags": [],
+          "description": "Thai and boba tea with bright, bold flavors at Gathering Square.",
+          "lat": 35.587,
+          "lng": -78.781,
+          "links": [
+            { "label": "Website", "url": "https://khaosen.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Khao%20Sen%2C%202100%20Gathering%20Square%20Ct%2C%20Fuquay-Varina%2C%20NC%2027526" }
+          ]
+        },
+        {
+          "slug": "osha-thai",
+          "name": "Osha Thai Kitchen & Sushi",
+          "tags": [],
+          "description": "Thai and sushi in Holly Springs — reliable and well-executed.",
+          "lat": 35.642,
+          "lng": -78.834,
+          "links": [
+            { "label": "Website", "url": "https://oshathaikitchennc.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Osha%20Thai%20Kitchen%2C%20242%20S%20Main%20St%2C%20Holly%20Springs%2C%20NC%2027540" }
+          ]
+        },
+        {
+          "slug": "gyro-spot",
+          "name": "The Gyro Spot",
+          "tags": [],
+          "description": "Simple, well-executed Greek — the gyros are worth the trip.",
+          "lat": 35.5831,
+          "lng": -78.7843,
+          "links": [
+            { "label": "Website", "url": "https://www.thegyrospotnc.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=The%20Gyro%20Spot%2C%201005%20E%20Broad%20St%2C%20Fuquay-Varina%2C%20NC%2027526" }
+          ]
+        },
+        {
+          "slug": "sobol",
+          "name": "SoBol",
+          "tags": [],
+          "description": "Açaí bowls and smoothies — a solid healthy lunch option.",
+          "lat": 35.595,
+          "lng": -78.772,
+          "links": [
+            { "label": "Website", "url": "https://mysobol.com/location/fuquay-varina/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=SoBol%2C%20612%20Lakestone%20Commons%20Ave%2C%20Fuquay-Varina%2C%20NC%2027526" }
+          ]
+        },
+        {
+          "slug": "grain-and-berry",
+          "name": "Grain and Berry",
+          "tags": [],
+          "description": "Açaí bowls and smoothie bowls in Holly Springs.",
+          "lat": 35.65,
+          "lng": -78.836,
+          "links": [
+            { "label": "Website", "url": "https://grainandberry.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Grain%20and%20Berry%2C%20101%20Oakview%20Commons%20Dr%2C%20Holly%20Springs%2C%20NC%2027540" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bars",
+      "title": "Bars",
+      "blurb": "Where to go for a drink.",
+      "color": "#7c3aed",
+      "places": [
+        {
+          "slug": "mason-jar-tavern",
+          "name": "The Mason Jar Tavern",
+          "tags": [],
+          "description": "Classic American tavern with rotating taps and solid comfort food.",
+          "lat": 35.5819,
+          "lng": -78.7996,
+          "links": [
+            { "label": "Website", "url": "https://www.themasonjartavern.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=The%20Mason%20Jar%20Tavern%2C%20305%20S%20Main%20St%2C%20Fuquay-Varina%2C%20NC%2027526" }
+          ]
+        },
+        {
+          "slug": "moonlight-liquor-lounge",
+          "name": "Moonlight Liquor Lounge",
+          "tags": [],
+          "description": "Craft cocktails and a low-key speakeasy vibe on Broad St.",
+          "lat": 35.5832,
+          "lng": -78.7928,
+          "links": [
+            { "label": "Website", "url": "https://moonlightnc.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Moonlight%20Liquor%20Lounge%2C%20509%20E%20Broad%20St%2C%20Fuquay-Varina%2C%20NC%2027526" }
+          ]
+        },
+        {
+          "slug": "napper-tandys",
+          "name": "Napper Tandy's",
+          "tags": [],
+          "description": "Irish pub in downtown Angier — great pint, proper pub food, good craic.",
+          "lat": 35.507,
+          "lng": -78.739,
+          "links": [
+            { "label": "Website", "url": "https://www.nappertandyspublichouse.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Napper%20Tandy%27s%2C%2027%20S%20Broad%20St%2C%20Angier%2C%20NC%2027501" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coffee",
+      "title": "Coffee",
+      "blurb": "Where we go for a good cup.",
+      "color": "#795548",
+      "places": [
+        {
+          "slug": "cultivate-coffee",
+          "name": "Cultivate Coffee Roasters",
+          "tags": [],
+          "description": "Downtown FV's specialty coffee roaster — beans they roast themselves.",
+          "lat": 35.5834,
+          "lng": -78.7986,
+          "links": [
+            { "label": "Website", "url": "https://www.cultivate.coffee/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Cultivate%20Coffee%20Roasters%2C%20128%20S%20Fuquay%20Ave%2C%20Fuquay-Varina%2C%20NC%2027526" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ice-cream",
+      "title": "Ice Cream",
+      "blurb": "A strong local showing — we're lucky here.",
+      "color": "#db2777",
+      "places": [
+        {
+          "slug": "fresh-local-ice-cream",
+          "name": "FRESH. Local Ice Cream",
+          "tags": [],
+          "description": "Small-batch, locally made ice cream right on S Main St.",
+          "lat": 35.582,
+          "lng": -78.799,
+          "links": [
+            { "label": "Website", "url": "https://www.freshlocalicecream.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=FRESH.%20Local%20Ice%20Cream%2C%20202%20S%20Main%20St%2C%20Fuquay-Varina%2C%20NC%2027526" }
+          ]
+        },
+        {
+          "slug": "jts-creamery",
+          "name": "JT's Creamery",
+          "tags": [],
+          "description": "Homemade ice cream and pastries at Gathering Square.",
+          "lat": 35.5872,
+          "lng": -78.7812,
+          "links": [
+            { "label": "Website", "url": "https://www.jtscreamery.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=JT%27s%20Creamery%2C%202128%20Gathering%20Square%20Ct%2C%20Fuquay-Varina%2C%20NC%2027526" }
+          ]
+        },
+        {
+          "slug": "pints-ice-cream",
+          "name": "Pints Ice Cream & Beer",
+          "tags": [],
+          "description": "Ice cream and craft beer under one roof — a uniquely good combination.",
+          "lat": 35.5833,
+          "lng": -78.793,
+          "links": [
+            { "label": "Facebook", "url": "https://www.facebook.com/PintsIceCream/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Pints%20Ice%20Cream%20%26%20Beer%2C%20512%20Broad%20St%2C%20Fuquay-Varina%2C%20NC%2027526" }
+          ]
+        },
+        {
+          "slug": "sunni-skys",
+          "name": "Sunni Sky's",
+          "tags": [],
+          "description": "A Hwy 55 institution — homemade ice cream just down the road in Angier.",
+          "lat": 35.5317,
+          "lng": -78.7446,
+          "links": [
+            { "label": "Website", "url": "https://www.sunniskys.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Sunni%20Sky%27s%2C%208617%20NC%20Hwy%2055%20S%2C%20Angier%2C%20NC%2027501" }
+          ]
+        },
+        {
+          "slug": "tiny-house-treats",
+          "name": "Tiny House Treats",
+          "tags": [],
+          "description": "Frozen custard and desserts from a charming little spot on E Broad.",
+          "lat": 35.5829,
+          "lng": -78.7838,
+          "links": [
+            { "label": "Instagram", "url": "https://www.instagram.com/tinyhousetreatsfv/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Tiny%20House%20Treats%2C%201013%20E%20Broad%20St%2C%20Fuquay-Varina%2C%20NC%2027526" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "attractions",
+      "title": "Attractions",
+      "blurb": "Things to do in and around Fuquay.",
+      "color": "#2563eb",
+      "places": [
+        {
+          "slug": "raven-rock-state-park",
+          "name": "Raven Rock State Park",
+          "tags": [],
+          "description": "Great hiking with suspension bridges and dramatic rock faces over the Cape Fear River.",
+          "lat": 35.4597,
+          "lng": -78.9127,
+          "links": [
+            { "label": "Website", "url": "https://www.ncparks.gov/state-parks/raven-rock-state-park" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Raven%20Rock%20State%20Park%2C%203009%20Raven%20Rock%20Rd%2C%20Lillington%2C%20NC%2027546" }
+          ]
+        },
+        {
+          "slug": "harris-lake",
+          "name": "Harris Lake County Park",
+          "tags": [],
+          "description": "Lakeside hiking and mountain biking with great views — a local gem.",
+          "lat": 35.625,
+          "lng": -78.9297,
+          "links": [
+            { "label": "Website", "url": "https://www.wake.gov/departments-government/parks-recreation-open-space/all-parks-trails/harris-lake-county-park" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Harris%20Lake%20County%20Park%2C%202112%20County%20Park%20Dr%2C%20New%20Hill%2C%20NC%2027562" }
+          ]
+        },
+        {
+          "slug": "harnett-regional-jetport",
+          "name": "Harnett Regional Jetport",
+          "tags": [],
+          "description": "Watch small planes and regional jets come and go — a surprisingly fun afternoon.",
+          "lat": 35.3439,
+          "lng": -78.6674,
+          "links": [
+            { "label": "Website", "url": "https://www.harnett.org/airport/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Harnett%20Regional%20Jetport%2C%20950%20Airport%20Rd%2C%20Erwin%2C%20NC%2028339" }
+          ]
+        },
+        {
+          "slug": "mcwallys",
+          "name": "McWally's",
+          "tags": [],
+          "description": "Bowling, laser tag, arcade, and a full restaurant — the go-to family night out.",
+          "lat": 35.608,
+          "lng": -78.793,
+          "links": [
+            { "label": "Website", "url": "https://mcwallys.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=McWally%27s%2C%201475%20N%20Judd%20Pkwy%20NE%2C%20Fuquay-Varina%2C%20NC%2027526" }
+          ]
+        },
+        {
+          "slug": "fuquay-gun",
+          "name": "Fuquay Gun",
+          "tags": [],
+          "description": "The local gun shop — knowledgeable staff and a solid selection.",
+          "lat": 35.599,
+          "lng": -78.799,
+          "links": [
+            { "label": "Website", "url": "https://www.fuquaygun.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Fuquay%20Gun%2C%201602%20N%20Main%20St%2C%20Fuquay-Varina%2C%20NC%2027526" }
+          ]
+        },
+        {
+          "slug": "angier-nail-lounge",
+          "name": "The Nail Lounge",
+          "tags": [],
+          "description": "Top-notch nail salon just down the road in Angier.",
+          "lat": 35.5065,
+          "lng": -78.7394,
+          "links": [
+            { "label": "Website", "url": "https://thenailloungenc.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=The%20Nail%20Lounge%2C%2043%20S%20Broad%20St%2C%20Angier%2C%20NC%2027501" }
+          ]
+        },
+        {
+          "slug": "buffaloe-lanes-south",
+          "name": "Buffaloe Lanes South",
+          "tags": [],
+          "description": "The closest proper bowling alley — about 15 minutes up Fayetteville Rd.",
+          "lat": 35.683,
+          "lng": -78.685,
+          "links": [
+            { "label": "Website", "url": "https://www.buffaloelanes.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Buffaloe%20Lanes%20South%2C%206701%20Fayetteville%20Rd%2C%20Raleigh%2C%20NC%2027603" }
+          ]
+        }
+      ]
+    }
+  ]
+}
