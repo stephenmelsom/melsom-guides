@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Tools
 
 - `gh` cli
-- `cf` (Cloudflare Pages local dev / deploy)
+- `wrangler` (Cloudflare Pages local dev / deploy)
 
 ## What this is
 
