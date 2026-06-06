@@ -174,8 +174,8 @@
       const openMenu = () => {
         menu.hidden = false;
         btn.setAttribute('aria-expanded', 'true');
-        const first = menu.querySelector('li');
-        if (first) first.focus();
+        const current = menu.querySelector('.guide-menu-current') || menu.querySelector('li');
+        if (current) current.focus();
       };
 
       const closeMenu = () => {
