@@ -287,6 +287,18 @@
           ]
         },
         {
+          "slug": "track-record-vinyl",
+          "name": "Track Record Vinyl Shop & Listening Lounge",
+          "tags": [],
+          "description": "New downtown record shop and listening lounge — new and used vinyl across every genre.",
+          "lat": 35.5847,
+          "lng": -78.7995,
+          "links": [
+            { "label": "Website", "url": "https://www.trackrecordvinyl.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Track%20Record%20Vinyl%20Shop%2C%20115%20N%20Main%20St%2C%20Fuquay-Varina%2C%20NC%2027526" }
+          ]
+        },
+        {
           "slug": "buffaloe-lanes-south",
           "name": "Buffaloe Lanes South",
           "tags": [],
