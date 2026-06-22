@@ -375,6 +375,18 @@
               ]
             },
             {
+              "slug": "meche-cocina-mexicana",
+              "name": "Meche Cocina Mexicana",
+              "tags": [],
+              "description": "Family-run kitchen serving authentic, from-scratch Mexican cooking in the Shoppes of Kildaire.",
+              "lat": 35.7056,
+              "lng": -78.7968,
+              "links": [
+                { "label": "Website", "url": "https://www.mechecocinamexicana.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Meche%20Cocina%20Mexicana%2C%203470%20Kildaire%20Farm%20Rd%2C%20Suite%20160%2C%20Cary%2C%20NC%2027518" }
+              ]
+            },
+            {
               "slug": "naan-house",
               "name": "Naan House",
               "tags": [],
