@@ -419,6 +419,18 @@
                 { "label": "Website", "url": "https://www.samjonesbbq.com/raleigh" },
                 { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Sam%20Jones%20BBQ%2C%20502%20W%20Lenoir%20St%2C%20Raleigh%2C%20NC%2027601" }
               ]
+            },
+            {
+              "slug": "bull-city-burger-and-brewery",
+              "name": "Bull City Burger and Brewery",
+              "tags": [],
+              "description": "Downtown Durham burger joint and brewery — locally sourced beef and house-brewed beers.",
+              "lat": 35.9958,
+              "lng": -78.9008,
+              "links": [
+                { "label": "Website", "url": "https://www.bullcityburgerandbrewery.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Bull%20City%20Burger%20and%20Brewery%2C%20107%20E%20Parrish%20St%2C%20Durham%2C%20NC%2027701" }
+              ]
             }
           ]
         }
