@@ -81,6 +81,10 @@ Edit the relevant `guides/<slug>.json` with the new place object. Maintain the e
 
 After editing, confirm to the user: what was added, which section, and the shareable URL path it'll have (e.g., `/raleigh/iris-coffee-lab`).
 
+### 6. Commit and push to `main`
+
+Validate the JSON, commit with a descriptive message, and push straight to `main` — no need to ask for approval first. Cloudflare Pages redeploys from `main` automatically, so the change goes live once pushed.
+
 ## Example
 
 **User:** "Add Boulted Bread to the Raleigh guide bakeries section"
