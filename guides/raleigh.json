@@ -910,6 +910,50 @@
           ]
         }
       ]
+    },
+    {
+      "id": "concert-venues",
+      "title": "Concert Venues",
+      "blurb": "Where we catch live music and touring shows around the Triangle.",
+      "color": "#7c3aed",
+      "places": [
+        {
+          "slug": "dpac",
+          "name": "DPAC (Durham Performing Arts Center)",
+          "tags": [],
+          "description": "The Triangle's premier theater — touring Broadway, concerts, and comedy in downtown Durham.",
+          "lat": 35.9932,
+          "lng": -78.9022,
+          "links": [
+            { "label": "Website", "url": "https://www.dpacnc.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=DPAC%2C%20123%20Vivian%20St%2C%20Durham%2C%20NC%2027701" }
+          ]
+        },
+        {
+          "slug": "coastal-credit-union-music-park",
+          "name": "Coastal Credit Union Music Park at Walnut Creek",
+          "tags": [],
+          "description": "Raleigh's big open-air amphitheater (the old Walnut Creek) — major touring acts all summer.",
+          "lat": 35.7319,
+          "lng": -78.5881,
+          "links": [
+            { "label": "Website", "url": "https://www.coastalcreditunionmusicpark.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Coastal%20Credit%20Union%20Music%20Park%20at%20Walnut%20Creek%2C%203801%20Rock%20Quarry%20Rd%2C%20Raleigh%2C%20NC%2027610" }
+          ]
+        },
+        {
+          "slug": "red-hat-amphitheater",
+          "name": "Red Hat Amphitheater",
+          "tags": [],
+          "description": "Open-air amphitheater in the heart of downtown Raleigh.",
+          "lat": 35.7745,
+          "lng": -78.6420,
+          "links": [
+            { "label": "Website", "url": "https://www.redhatamphitheater.com/" },
+            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Red%20Hat%20Amphitheater%2C%20500%20S%20McDowell%20St%2C%20Raleigh%2C%20NC%2027601" }
+          ]
+        }
+      ]
     }
   ]
 }
