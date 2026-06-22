@@ -1,7 +1,7 @@
 {
-  "defaultGuide": "raleigh",
+  "defaultGuide": "triangle",
   "guides": [
-    { "slug": "raleigh", "name": "Raleigh", "title": "The Melsom Guide to Raleigh" },
+    { "slug": "triangle", "name": "The Triangle", "title": "The Melsom Guide to The Triangle" },
     { "slug": "fuquay-varina", "name": "Fuquay-Varina", "title": "The Melsom Guide to Fuquay-Varina" }
   ]
 }

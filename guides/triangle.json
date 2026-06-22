@@ -1,11 +1,11 @@
 {
-  "slug": "raleigh",
-  "name": "Raleigh",
-  "title": "The Melsom Guide to Raleigh",
-  "intro": "Our favorite spots around Raleigh & Cary — the places we send friends and family to. Each one links to its website and Google Maps.",
-  "description": "Our favorite restaurants, coffee shops, bakeries, and attractions around Raleigh, NC.",
+  "slug": "triangle",
+  "name": "The Triangle",
+  "title": "The Melsom Guide to The Triangle",
+  "intro": "Our favorite spots around the Triangle — the places we send friends and family to. Each one links to its website and Google Maps.",
+  "description": "Our favorite restaurants, coffee shops, bakeries, and attractions around the Triangle of North Carolina.",
   "accent": "#0F766E",
-  "ogImage": "/assets/og/raleigh.png",
+  "ogImage": "/assets/og/triangle.png",
   "tags": [
     { "id": "breakfast", "label": "Breakfast" },
     { "id": "kids", "label": "Kids" }
