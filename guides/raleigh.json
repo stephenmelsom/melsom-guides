@@ -57,50 +57,6 @@
       ]
     },
     {
-      "id": "baby-shower-2026",
-      "title": "Baby Shower 2026",
-      "blurb": "",
-      "color": "#7c3aed",
-      "places": [
-        {
-          "slug": "thomas-g-crowder-woodland-center",
-          "name": "Thomas G. Crowder Woodland Center",
-          "tags": [],
-          "description": "The location of the baby shower — a waterfront event venue nestled in Lake Johnson Park.",
-          "lat": 35.77197,
-          "lng": -78.70903,
-          "links": [
-            { "label": "Website", "url": "https://raleighnc.gov/parks-and-recreation/places/thomas-g-crowder-woodland-center" },
-            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Thomas%20G.%20Crowder%20Woodland%20Center%2C%205611%20Jaguar%20Park%20Dr%2C%20Raleigh%2C%20NC%2027606" }
-          ]
-        },
-        {
-          "slug": "trophy-brewing",
-          "name": "Trophy Brewing",
-          "tags": [],
-          "description": "Where the festivities will move after the baby shower — 12 rotating drafts, food trucks on site, and a great patio.",
-          "lat": 35.76164,
-          "lng": -78.65710,
-          "links": [
-            { "label": "Website", "url": "https://www.trophybrewing.com/brewery-taproom" },
-            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Trophy%20Brewing%2C%20656%20Maywood%20Ave%2C%20Raleigh%2C%20NC%2027603" }
-          ]
-        },
-        {
-          "slug": "sam-jones-bbq",
-          "name": "Sam Jones BBQ",
-          "tags": [],
-          "description": "Legendary whole-hog Eastern NC barbecue — we'll be having catering delivered by them for the shower.",
-          "lat": 35.7725,
-          "lng": -78.6596,
-          "links": [
-            { "label": "Website", "url": "https://www.samjonesbbq.com/raleigh" },
-            { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Sam%20Jones%20BBQ%2C%20502%20W%20Lenoir%20St%2C%20Raleigh%2C%20NC%2027601" }
-          ]
-        }
-      ]
-    },
-    {
       "id": "restaurants",
       "title": "Restaurants",
       "blurb": "We've eaten our way through Raleigh so you don't have to. (You should still do it though.)",
@@ -450,6 +406,18 @@
               "links": [
                 { "label": "Website", "url": "https://www.dampfgoodbbq.com/" },
                 { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=DAMPF%20Good%20BBQ%2C%206800%20Good%20Hope%20Church%20Rd%2C%20Cary%2C%20NC%2027519" }
+              ]
+            },
+            {
+              "slug": "sam-jones-bbq",
+              "name": "Sam Jones BBQ",
+              "tags": [],
+              "description": "Legendary whole-hog Eastern NC barbecue.",
+              "lat": 35.7725,
+              "lng": -78.6596,
+              "links": [
+                { "label": "Website", "url": "https://www.samjonesbbq.com/raleigh" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Sam%20Jones%20BBQ%2C%20502%20W%20Lenoir%20St%2C%20Raleigh%2C%20NC%2027601" }
               ]
             }
           ]
@@ -913,6 +881,18 @@
               "links": [
                 { "label": "Raleigh", "url": "https://theboxcarbar.com/raleigh/" },
                 { "label": "Durham", "url": "https://theboxcarbar.com/durham/" }
+              ]
+            },
+            {
+              "slug": "trophy-brewing",
+              "name": "Trophy Brewing",
+              "tags": [],
+              "description": "12 rotating drafts, food trucks on site, and a great patio.",
+              "lat": 35.76164,
+              "lng": -78.65710,
+              "links": [
+                { "label": "Website", "url": "https://www.trophybrewing.com/brewery-taproom" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Trophy%20Brewing%2C%20656%20Maywood%20Ave%2C%20Raleigh%2C%20NC%2027603" }
               ]
             },
             {
