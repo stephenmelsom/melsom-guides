@@ -431,6 +431,18 @@
                 { "label": "Website", "url": "https://www.bullcityburgerandbrewery.com/" },
                 { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Bull%20City%20Burger%20and%20Brewery%2C%20107%20E%20Parrish%20St%2C%20Durham%2C%20NC%2027701" }
               ]
+            },
+            {
+              "slug": "havana-spin",
+              "name": "Havana Spin",
+              "tags": [],
+              "description": "Cuban food truck off Ten-Ten Rd — pressed Cubanos, croquetas, and café con leche.",
+              "lat": 35.7003,
+              "lng": -78.7779,
+              "links": [
+                { "label": "Website", "url": "https://havana-spin.square.site/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Havana%20Spin%2C%203300%20Ten-Ten%20Rd%2C%20Cary%2C%20NC%2027518" }
+              ]
             }
           ]
         }
