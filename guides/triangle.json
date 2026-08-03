@@ -353,6 +353,18 @@
                 { "label": "Website", "url": "https://naan-house.com/" },
                 { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Naan%20House%20Indian%20Bistro%2C%205460%20Apex%20Peakway%2C%20Apex%2C%20NC%2027502" }
               ]
+            },
+            {
+              "slug": "saffron-indian-cuisine",
+              "name": "Saffron Indian Cuisine",
+              "tags": [],
+              "description": "Well-regarded Cary Indian spot on Kildaire Farm Rd — classic curries, tandoor, and a popular lunch buffet.",
+              "lat": 35.7625,
+              "lng": -78.7830,
+              "links": [
+                { "label": "Website", "url": "https://saffroncary.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Saffron%20Indian%20Cuisine%2C%202048%20Kildaire%20Farm%20Rd%2C%20Cary%2C%20NC%2027518" }
+              ]
             }
           ]
         },
