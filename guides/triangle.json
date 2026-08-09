@@ -455,6 +455,18 @@
                 { "label": "Website", "url": "https://havana-spin.square.site/" },
                 { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Havana%20Spin%2C%203300%20Ten-Ten%20Rd%2C%20Cary%2C%20NC%2027518" }
               ]
+            },
+            {
+              "slug": "kokyu",
+              "name": "KoKyu Na'Mean",
+              "tags": [],
+              "description": "Korean-fusion street food (the old KoKyu BBQ truck gone brick-and-mortar) — tacos, sandwiches, and rice bowls near Southpoint.",
+              "lat": 35.9040,
+              "lng": -78.9410,
+              "links": [
+                { "label": "Website", "url": "https://www.kokyubbq.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=KoKyu%20Na%27Mean%2C%20245%20E%20NC-54%2C%20Durham%2C%20NC%2027713" }
+              ]
             }
           ]
         }
