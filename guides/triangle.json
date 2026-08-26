@@ -239,6 +239,18 @@
                 { "label": "Website", "url": "https://thecowfish.com/raleigh/" },
                 { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=The%20Cowfish%20Sushi%20Burger%20Bar%2C%204208%20Six%20Forks%20Rd%2C%20Raleigh%2C%20NC%2027609" }
               ]
+            },
+            {
+              "slug": "matsumoto-craft-ramen",
+              "name": "Matsumoto Craft Ramen",
+              "tags": [],
+              "description": "Scratch-made Japanese ramen from a Japanese chef, tucked into Waverly Place.",
+              "lat": 35.7494,
+              "lng": -78.7773,
+              "links": [
+                { "label": "Facebook", "url": "https://www.facebook.com/mcraftramen/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Matsumoto%20Craft%20Ramen%2C%20525%20New%20Waverly%20Pl%2C%20Cary%2C%20NC%2027518" }
+              ]
             }
           ]
         },
