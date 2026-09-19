@@ -263,6 +263,18 @@
                 { "label": "Website", "url": "https://www.ajummakorean.com/" },
                 { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Ajumma%20Korean%2C%202055%20Renaissance%20Park%20Pl%2C%20Cary%2C%20NC%2027513" }
               ]
+            },
+            {
+              "slug": "yuri-japanese",
+              "name": "Yuri Japanese Restaurant",
+              "tags": [],
+              "description": "Longtime Cary Japanese spot on Kildaire Farm Rd — sushi, sashimi, and traditional plates.",
+              "lat": 35.7565,
+              "lng": -78.7712,
+              "links": [
+                { "label": "Website", "url": "https://yuricary.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Yuri%20Japanese%20Restaurant%2C%201361%20Kildaire%20Farm%20Rd%2C%20Cary%2C%20NC%2027511" }
+              ]
             }
           ]
         },
