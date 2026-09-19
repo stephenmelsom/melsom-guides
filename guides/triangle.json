@@ -251,6 +251,18 @@
                 { "label": "Facebook", "url": "https://www.facebook.com/mcraftramen/" },
                 { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Matsumoto%20Craft%20Ramen%2C%20525%20New%20Waverly%20Pl%2C%20Cary%2C%20NC%2027518" }
               ]
+            },
+            {
+              "slug": "ajumma",
+              "name": "Ajumma Korean",
+              "tags": [],
+              "description": "Korean home cooking at the Arboretum at Weston — banchan, stews, and grilled plates.",
+              "lat": 35.8065,
+              "lng": -78.7825,
+              "links": [
+                { "label": "Website", "url": "https://www.ajummakorean.com/" },
+                { "label": "Map", "url": "https://www.google.com/maps/search/?api=1&query=Ajumma%20Korean%2C%202055%20Renaissance%20Park%20Pl%2C%20Cary%2C%20NC%2027513" }
+              ]
             }
           ]
         },
